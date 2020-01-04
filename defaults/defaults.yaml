@@ -1,0 +1,36 @@
+
+from: markdown
+to: pdf
+
+pdf-engine: pdflatex
+
+variables:
+  documentclass: scrartcl
+  papersize: a4
+  fontsize: 10pt
+  classoption:
+    - twosides
+    - draft
+
+standalone: true
+self-contained: true
+strip-comments: true
+table-of-contents: false
+toc-depth: 2
+number-sections: true
+default-image-extension: ".pdf"
+
+metadata-files:
+- metadata.yaml
+
+data-dir: "../"
+resource-path: ["./demo/"]
+include-in-header: [homework.tex]
+include-before-body: []
+include-after-body: []
+
+filters:
+- replace.lua
+
+
+verbosity: INFO
